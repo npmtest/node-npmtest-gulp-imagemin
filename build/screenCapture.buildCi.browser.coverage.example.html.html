@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <title>Code coverage report for node-npmtest-gulp-imagemin/gulp-imagemin/index.js</title>
     <meta charset="utf-8">
     <style>
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-gulp-imagemin/gulp-imagemin/</a> &#187; index.js</div>
+    <div class="path"><a href="../../index.html">All files</a> » <a href="index.html">node-npmtest-gulp-imagemin/gulp-imagemin/</a> » index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -464,105 +462,105 @@ const plur = require('plur');
 const defaultPlugins = ['gifsicle', 'jpegtran', 'optipng', 'svgo'];
 &nbsp;
 const loadPlugin = (plugin, args) =&gt; {
-<span class="cstat-no" title="statement not covered" >	try {</span>
-<span class="cstat-no" title="statement not covered" >		return require(`imagemin-${plugin}`).apply(null, args); </span>// eslint-disable-line import/no-dynamic-require
+<span class="cstat-no" title="statement not covered">	try {</span>
+<span class="cstat-no" title="statement not covered">		return require(`imagemin-${plugin}`).apply(null, args); </span>// eslint-disable-line import/no-dynamic-require
 	} catch (err) {
-<span class="cstat-no" title="statement not covered" >		gutil.log(`gulp-imagemin: Couldn't load default plugin "${plugin}"`);</span>
+<span class="cstat-no" title="statement not covered">		gutil.log(`gulp-imagemin: Couldn't load default plugin "${plugin}"`);</span>
 	}
 };
 &nbsp;
 const exposePlugin = plugin =&gt;
-<span class="fstat-no" title="function not covered" >	function () {</span>
-<span class="cstat-no" title="statement not covered" >		const args = [].slice.call(arguments);</span>
-<span class="cstat-no" title="statement not covered" >		return loadPlugin(plugin, args);</span>
+<span class="fstat-no" title="function not covered">	function () {</span>
+<span class="cstat-no" title="statement not covered">		const args = [].slice.call(arguments);</span>
+<span class="cstat-no" title="statement not covered">		return loadPlugin(plugin, args);</span>
 	};
 &nbsp;
 const getDefaultPlugins = () =&gt;
-<span class="cstat-no" title="statement not covered" >	defaultPlugins.reduce((plugins, plugin) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >		const instance = loadPlugin(plugin);</span>
+<span class="cstat-no" title="statement not covered">	defaultPlugins.reduce((plugins, plugin) =&gt; {</span>
+<span class="cstat-no" title="statement not covered">		const instance = loadPlugin(plugin);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (!instance) {</span>
-<span class="cstat-no" title="statement not covered" >			return plugins;</span>
+<span class="cstat-no" title="statement not covered">		if (!instance) {</span>
+<span class="cstat-no" title="statement not covered">			return plugins;</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return plugins.concat(instance);</span>
+<span class="cstat-no" title="statement not covered">		return plugins.concat(instance);</span>
 	}, []);
 &nbsp;
 module.exports = (plugins, opts) =&gt; {
-<span class="cstat-no" title="statement not covered" >	if (typeof plugins === 'object' &amp;&amp; !Array.isArray(plugins)) {</span>
-<span class="cstat-no" title="statement not covered" >		opts = plugins;</span>
-<span class="cstat-no" title="statement not covered" >		plugins = null;</span>
+<span class="cstat-no" title="statement not covered">	if (typeof plugins === 'object' &amp;&amp; !Array.isArray(plugins)) {</span>
+<span class="cstat-no" title="statement not covered">		opts = plugins;</span>
+<span class="cstat-no" title="statement not covered">		plugins = null;</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	opts = Object.assign({</span>
+<span class="cstat-no" title="statement not covered">	opts = Object.assign({</span>
 		// TODO: remove this when gulp get's a real logger with levels
 		verbose: process.argv.indexOf('--verbose') !== -1
 	}, opts);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	const validExts = ['.jpg', '.jpeg', '.png', '.gif', '.svg'];</span>
+<span class="cstat-no" title="statement not covered">	const validExts = ['.jpg', '.jpeg', '.png', '.gif', '.svg'];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	let totalBytes = 0;</span>
-<span class="cstat-no" title="statement not covered" >	let totalSavedBytes = 0;</span>
-<span class="cstat-no" title="statement not covered" >	let totalFiles = 0;</span>
+<span class="cstat-no" title="statement not covered">	let totalBytes = 0;</span>
+<span class="cstat-no" title="statement not covered">	let totalSavedBytes = 0;</span>
+<span class="cstat-no" title="statement not covered">	let totalFiles = 0;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	return through.obj({</span>
+<span class="cstat-no" title="statement not covered">	return through.obj({</span>
 		maxConcurrency: 8
 	}, (file, enc, cb) =&gt; {
-<span class="cstat-no" title="statement not covered" >		if (file.isNull()) {</span>
-<span class="cstat-no" title="statement not covered" >			cb(null, file);</span>
-<span class="cstat-no" title="statement not covered" >			return;</span>
+<span class="cstat-no" title="statement not covered">		if (file.isNull()) {</span>
+<span class="cstat-no" title="statement not covered">			cb(null, file);</span>
+<span class="cstat-no" title="statement not covered">			return;</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (file.isStream()) {</span>
-<span class="cstat-no" title="statement not covered" >			cb(new gutil.PluginError('gulp-imagemin', 'Streaming not supported'));</span>
-<span class="cstat-no" title="statement not covered" >			return;</span>
+<span class="cstat-no" title="statement not covered">		if (file.isStream()) {</span>
+<span class="cstat-no" title="statement not covered">			cb(new gutil.PluginError('gulp-imagemin', 'Streaming not supported'));</span>
+<span class="cstat-no" title="statement not covered">			return;</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (validExts.indexOf(path.extname(file.path).toLowerCase()) === -1) {</span>
-<span class="cstat-no" title="statement not covered" >			if (opts.verbose) {</span>
-<span class="cstat-no" title="statement not covered" >				gutil.log(`gulp-imagemin: Skipping unsupported image ${chalk.blue(file.relative)}`);</span>
+<span class="cstat-no" title="statement not covered">		if (validExts.indexOf(path.extname(file.path).toLowerCase()) === -1) {</span>
+<span class="cstat-no" title="statement not covered">			if (opts.verbose) {</span>
+<span class="cstat-no" title="statement not covered">				gutil.log(`gulp-imagemin: Skipping unsupported image ${chalk.blue(file.relative)}`);</span>
 			}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >			cb(null, file);</span>
-<span class="cstat-no" title="statement not covered" >			return;</span>
+<span class="cstat-no" title="statement not covered">			cb(null, file);</span>
+<span class="cstat-no" title="statement not covered">			return;</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		const use = plugins || getDefaultPlugins();</span>
+<span class="cstat-no" title="statement not covered">		const use = plugins || getDefaultPlugins();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		imagemin.buffer(file.contents, {use})</span>
+<span class="cstat-no" title="statement not covered">		imagemin.buffer(file.contents, {use})</span>
 			.then(data =&gt; {
-<span class="cstat-no" title="statement not covered" >				const originalSize = file.contents.length;</span>
-<span class="cstat-no" title="statement not covered" >				const optimizedSize = data.length;</span>
-<span class="cstat-no" title="statement not covered" >				const saved = originalSize - optimizedSize;</span>
-<span class="cstat-no" title="statement not covered" >				const percent = originalSize &gt; 0 ? (saved / originalSize) * 100 : 0;</span>
-<span class="cstat-no" title="statement not covered" >				const savedMsg = `saved ${prettyBytes(saved)} - ${percent.toFixed(1).replace(/\.0$/, '')}%`;</span>
-<span class="cstat-no" title="statement not covered" >				const msg = saved &gt; 0 ? savedMsg : 'already optimized';</span>
+<span class="cstat-no" title="statement not covered">				const originalSize = file.contents.length;</span>
+<span class="cstat-no" title="statement not covered">				const optimizedSize = data.length;</span>
+<span class="cstat-no" title="statement not covered">				const saved = originalSize - optimizedSize;</span>
+<span class="cstat-no" title="statement not covered">				const percent = originalSize &gt; 0 ? (saved / originalSize) * 100 : 0;</span>
+<span class="cstat-no" title="statement not covered">				const savedMsg = `saved ${prettyBytes(saved)} - ${percent.toFixed(1).replace(/\.0$/, '')}%`;</span>
+<span class="cstat-no" title="statement not covered">				const msg = saved &gt; 0 ? savedMsg : 'already optimized';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >				totalBytes += originalSize;</span>
-<span class="cstat-no" title="statement not covered" >				totalSavedBytes += saved;</span>
-<span class="cstat-no" title="statement not covered" >				totalFiles++;</span>
+<span class="cstat-no" title="statement not covered">				totalBytes += originalSize;</span>
+<span class="cstat-no" title="statement not covered">				totalSavedBytes += saved;</span>
+<span class="cstat-no" title="statement not covered">				totalFiles++;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >				if (opts.verbose) {</span>
-<span class="cstat-no" title="statement not covered" >					gutil.log('gulp-imagemin:', chalk.green('✔ ') + file.relative + chalk.gray(` (${msg})`));</span>
+<span class="cstat-no" title="statement not covered">				if (opts.verbose) {</span>
+<span class="cstat-no" title="statement not covered">					gutil.log('gulp-imagemin:', chalk.green('✔ ') + file.relative + chalk.gray(` (${msg})`));</span>
 				}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >				file.contents = data;</span>
-<span class="cstat-no" title="statement not covered" >				cb(null, file); </span>// eslint-disable-line promise/no-callback-in-promise
+<span class="cstat-no" title="statement not covered">				file.contents = data;</span>
+<span class="cstat-no" title="statement not covered">				cb(null, file); </span>// eslint-disable-line promise/no-callback-in-promise
 			})
 			.catch(err =&gt; {
 				// TODO: remove this setImmediate when gulp 4 is targeted
-<span class="cstat-no" title="statement not covered" >				setImmediate(cb, new gutil.PluginError('gulp-imagemin', err, {fileName: file.path}));</span>
+<span class="cstat-no" title="statement not covered">				setImmediate(cb, new gutil.PluginError('gulp-imagemin', err, {fileName: file.path}));</span>
 			});
 	}, cb =&gt; {
-<span class="cstat-no" title="statement not covered" >		const percent = totalBytes &gt; 0 ? (totalSavedBytes / totalBytes) * 100 : 0;</span>
-<span class="cstat-no" title="statement not covered" >		let msg = `Minified ${totalFiles} ${plur('image', totalFiles)}`;</span>
+<span class="cstat-no" title="statement not covered">		const percent = totalBytes &gt; 0 ? (totalSavedBytes / totalBytes) * 100 : 0;</span>
+<span class="cstat-no" title="statement not covered">		let msg = `Minified ${totalFiles} ${plur('image', totalFiles)}`;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (totalFiles &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >			msg += chalk.gray(` (saved ${prettyBytes(totalSavedBytes)} - ${percent.toFixed(1).replace(/\.0$/, '')}%)`);</span>
+<span class="cstat-no" title="statement not covered">		if (totalFiles &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">			msg += chalk.gray(` (saved ${prettyBytes(totalSavedBytes)} - ${percent.toFixed(1).replace(/\.0$/, '')}%)`);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		gutil.log('gulp-imagemin:', msg);</span>
-<span class="cstat-no" title="statement not covered" >		cb();</span>
+<span class="cstat-no" title="statement not covered">		gutil.log('gulp-imagemin:', msg);</span>
+<span class="cstat-no" title="statement not covered">		cb();</span>
 	});
 };
 &nbsp;
@@ -572,10 +570,11 @@ module.exports.optipng = exposePlugin('optipng');
 module.exports.svgo = exposePlugin('svgo');
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
     <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 21:35:23 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>

@@ -190,7 +190,7 @@
 <tspan x="10" y="3002">  │ │ │ │   │ │ └── path-dirname@1.0.2 </tspan>
 <tspan x="10" y="3018">  │ │ │ │   │ ├─┬ micromatch@2.3.11 </tspan>
 <tspan x="10" y="3034">  │ │ │ │   │ │ ├─┬ arr-diff@2.0.0 </tspan>
-<tspan x="10" y="3050">  │ │ │ │   │ │ │ └── arr-flatten@1.0.1 </tspan>
+<tspan x="10" y="3050">  │ │ │ │   │ │ │ └── arr-flatten@1.0.2 </tspan>
 <tspan x="10" y="3066">  │ │ │ │   │ │ ├── array-unique@0.2.1 </tspan>
 <tspan x="10" y="3082">  │ │ │ │   │ │ ├─┬ braces@1.8.5 </tspan>
 <tspan x="10" y="3098">  │ │ │ │   │ │ │ ├─┬ expand-range@1.8.2 </tspan>
@@ -331,7 +331,7 @@
 <tspan x="10" y="5258">  │ │ │ │     │   └── array-find-index@1.0.2 </tspan>
 <tspan x="10" y="5274">  │ │ │ │     ├── map-obj@1.0.1 </tspan>
 <tspan x="10" y="5290">  │ │ │ │     ├─┬ normalize-package-data@2.3.6 </tspan>
-<tspan x="10" y="5306">  │ │ │ │     │ ├── hosted-git-info@2.4.1 </tspan>
+<tspan x="10" y="5306">  │ │ │ │     │ ├── hosted-git-info@2.4.2 </tspan>
 <tspan x="10" y="5322">  │ │ │ │     │ ├─┬ is-builtin-module@1.0.0 </tspan>
 <tspan x="10" y="5338">  │ │ │ │     │ │ └── builtin-modules@1.1.1 </tspan>
 <tspan x="10" y="5354">  │ │ │ │     │ └─┬ validate-npm-package-license@3.0.1 </tspan>
