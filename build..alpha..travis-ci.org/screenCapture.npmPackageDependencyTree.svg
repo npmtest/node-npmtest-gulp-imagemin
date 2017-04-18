@@ -190,7 +190,7 @@
 <tspan x="10" y="3002">  │ │ │ │   │ │ └── path-dirname@1.0.2 </tspan>
 <tspan x="10" y="3018">  │ │ │ │   │ ├─┬ micromatch@2.3.11 </tspan>
 <tspan x="10" y="3034">  │ │ │ │   │ │ ├─┬ arr-diff@2.0.0 </tspan>
-<tspan x="10" y="3050">  │ │ │ │   │ │ │ └── arr-flatten@1.0.2 </tspan>
+<tspan x="10" y="3050">  │ │ │ │   │ │ │ └── arr-flatten@1.0.3 </tspan>
 <tspan x="10" y="3066">  │ │ │ │   │ │ ├── array-unique@0.2.1 </tspan>
 <tspan x="10" y="3082">  │ │ │ │   │ │ ├─┬ braces@1.8.5 </tspan>
 <tspan x="10" y="3098">  │ │ │ │   │ │ │ ├─┬ expand-range@1.8.2 </tspan>
@@ -378,7 +378,7 @@
 <tspan x="10" y="6010">  │ ├── is-jpg@1.0.0 </tspan>
 <tspan x="10" y="6026">  │ └── jpegtran-bin@3.2.0 </tspan>
 <tspan x="10" y="6042">  ├─┬ imagemin-optipng@5.2.1 </tspan>
-<tspan x="10" y="6058">  │ ├── is-png@1.0.0 </tspan>
+<tspan x="10" y="6058">  │ ├── is-png@1.1.0 </tspan>
 <tspan x="10" y="6074">  │ └── optipng-bin@3.1.4 </tspan>
 <tspan x="10" y="6090">  ├─┬ imagemin-svgo@5.2.1 </tspan>
 <tspan x="10" y="6106">  │ ├─┬ is-svg@2.1.0 </tspan>
